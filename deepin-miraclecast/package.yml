@@ -1,0 +1,26 @@
+name       : deepin-miraclecast
+version    : 1.0.8
+release    : 2
+source     :
+    - https://github.com/linuxdeepin/miraclecast/archive/1.0.8.tar.gz : 6403524871d07c11e6ed4a711fd3f41c9cc6a454140cb7234c7eeb2a208251fb
+license    : GPL-2.0 # CHECK ME
+component  : PLEASE FILL ME IN
+summary    : PLEASE FILL ME IN
+description: |
+    PLEASE FILL ME IN
+conflicts  :
+    - miraclecast
+builddeps  :
+    - pkgconfig(libudev)
+    - pkgconfig(libsystemd)
+    - pkgconfig(gdk-3.0)
+    - pkgconfig(glib-2.0)
+    - pkgconfig(gstreamer-1.0)
+    - pkgconfig(check)
+    - vala
+setup      : |
+    %cmake .
+build      : |
+    %make
+install    : |
+    %make_install
