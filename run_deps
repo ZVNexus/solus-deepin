@@ -1,0 +1,5 @@
+deepin-menu dtkwidget
+deepin-terminal deepin-menu
+dtkcore gsettings-qt
+dtkwidget deepin-qt-dbus-factory
+dtkwidget dtkcore

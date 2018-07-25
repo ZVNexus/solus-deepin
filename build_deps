@@ -1,0 +1,5 @@
+deepin-menu dtkwidget-devel
+dtkcore gsettings-qt-devel
+dtkwidget deepin-qt-dbus-factory-devel
+dtkwidget dtkcore-devel
+dtkwidget gsettings-qt-devel
