@@ -5,17 +5,17 @@
             <Name>William Floyd</Name>
             <Email>william.png2000@gmail.com</Email>
         </Packager>
-        <License>GPL-3.0</License>
+        <License>GPL-3.0-only</License>
         <PartOf>desktop.deepin</PartOf>
-        <Summary xml:lang="en">This is default terminal emulation application for Deepin.</Summary>
-        <Description xml:lang="en">This is default terminal emulation application for Deepin.
+        <Summary xml:lang="en">The default terminal emulation application for Deepin.</Summary>
+        <Description xml:lang="en">The default terminal emulation application for Deepin.
 </Description>
         <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://solus-project.com/sources/README.Solus</Archive>
     </Source>
     <Package>
         <Name>deepin-terminal</Name>
-        <Summary xml:lang="en">This is default terminal emulation application for Deepin.</Summary>
-        <Description xml:lang="en">This is default terminal emulation application for Deepin.
+        <Summary xml:lang="en">The default terminal emulation application for Deepin.</Summary>
+        <Description xml:lang="en">The default terminal emulation application for Deepin.
 </Description>
         <PartOf>desktop.deepin</PartOf>
         <Files>
@@ -272,8 +272,8 @@
         </Files>
     </Package>
     <History>
-        <Update release="16">
-            <Date>2018-07-21</Date>
+        <Update release="1">
+            <Date>2018-07-25</Date>
             <Version>3.0.1</Version>
             <Comment>Packaging update</Comment>
             <Name>William Floyd</Name>
