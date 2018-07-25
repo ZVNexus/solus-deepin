@@ -5,7 +5,7 @@
             <Name>William Floyd</Name>
             <Email>william.png2000@gmail.com</Email>
         </Packager>
-        <License>GPL-3.0</License>
+        <License>GPL-3.0-only</License>
         <PartOf>desktop.deepin.core</PartOf>
         <Summary xml:lang="en">Base development tool of all C++/Qt Developer work on Deepin.</Summary>
         <Description xml:lang="en">Deepin Tool Kit (Dtk) is the base development tool of all C++/Qt Developer work on Deepin.
@@ -69,7 +69,7 @@
 </Description>
         <PartOf>programming.devel</PartOf>
         <RuntimeDependencies>
-            <Dependency release="24">dtkwidget</Dependency>
+            <Dependency release="1">dtkwidget</Dependency>
         </RuntimeDependencies>
         <Files>
             <Path fileType="header">/usr/include/libdtk-2.0.9/DCore</Path>
@@ -226,8 +226,8 @@
         </Files>
     </Package>
     <History>
-        <Update release="24">
-            <Date>2018-07-21</Date>
+        <Update release="1">
+            <Date>2018-07-25</Date>
             <Version>2.0.9</Version>
             <Comment>Packaging update</Comment>
             <Name>William Floyd</Name>

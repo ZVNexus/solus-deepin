@@ -1,9 +1,9 @@
 name       : dtkwidget
 version    : 2.0.9
-release    : 24
+release    : 1
 source     :
     - git|https://github.com/linuxdeepin/dtkwidget.git : 2.0.9
-license    : GPL-3.0
+license    : GPL-3.0-only
 component  : desktop.deepin.core
 summary    : Base development tool of all C++/Qt Developer work on Deepin.
 description: |
@@ -18,9 +18,7 @@ builddeps  :
     - pkgconfig(Qt5MultimediaWidgets)
     - pkgconfig(Qt5Svg)
     - pkgconfig(Qt5X11Extras)
-    - pkgconfig(x11)
     - pkgconfig(xcb-util)
-    - pkgconfig(xext)
     - pkgconfig(xi)
     - qt5-tools-devel
 setup      : |
