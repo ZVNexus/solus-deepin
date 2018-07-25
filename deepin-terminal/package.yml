@@ -19,11 +19,12 @@ builddeps  :
     - pkgconfig(vte-2.91)
     - vala
 rundeps    :
+    - deepin-menu
     - expect
 setup      : |
     %patch -p1 < $pkgfiles/remove-vendor.patch
     %patch -p1 < $pkgfiles/0001-CMakeLists-Remove-specific-Glib-version.patch
-    %cmake_ninja
+    %cmake_ninja -DTEST_BUILD=OFF
 build      : |
     %ninja_build
 install    : |
