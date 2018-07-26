@@ -1,9 +1,9 @@
 name       : deepin-movie
 version    : 3.2.5
-release    : 13
+release    : 1
 source     :
     - git|https://github.com/linuxdeepin/deepin-movie-reborn.git : 3.2.5
-license    : GPL-3.0
+license    : GPL-3.0-only
 component  : desktop.deepin
 summary    : Deepin Movie Player.
 description: |
@@ -11,7 +11,6 @@ description: |
 builddeps  :
     - pkgconfig(dtkwidget)
     - pkgconfig(dvdnav)
-    - pkgconfig(gl)
     - pkgconfig(libavcodec)
     - pkgconfig(libavformat)
     - pkgconfig(libavresample)
@@ -31,18 +30,9 @@ builddeps  :
     - pkgconfig(xcb-ewmh)
     - pkgconfig(xcb-proto)
     - pkgconfig(xtst)
-rundeps    :
-    - deepin-qt5integration
 setup      : |
-    mkdir build
-    pushd build
-    %cmake ..
-    popd
+    %cmake_ninja
 build      : |
-    pushd build
-    %make
-    popd
+    %ninja_build
 install    : |
-    pushd build
-    %make_install
-    popd
+    %ninja_install
