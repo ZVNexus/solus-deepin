@@ -1,9 +1,9 @@
 name       : deepin-qt5integration
 version    : 0.3.1
-release    : 18
+release    : 1
 source     :
     - git|https://github.com/linuxdeepin/qt5integration.git : 0.3.1
-license    : GPL-3.0
+license    : GPL-3.0-only
 component  : desktop.deepin.core
 summary    : Qt platform theme integration plugins for DDE
 description: |
@@ -15,8 +15,6 @@ builddeps  :
     - pkgconfig(Qt5X11Extras)
     - pkgconfig(Qt5Xdg)
     - qt5-tools-devel
-rundeps    :
-    - deepin-qt5dxcb-plugin
 setup      : |
     %qmake PREFIX=%PREFIX% LIB_INSTALL_DIR=%libdir%
 build      : |

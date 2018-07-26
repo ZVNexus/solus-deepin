@@ -5,7 +5,7 @@
             <Name>William Floyd</Name>
             <Email>william.png2000@gmail.com</Email>
         </Packager>
-        <License>GPL-3.0</License>
+        <License>GPL-3.0-only</License>
         <PartOf>desktop.deepin.core</PartOf>
         <Summary xml:lang="en">Qt platform theme integration plugins for DDE</Summary>
         <Description xml:lang="en">The Qt platform theme integration plugins for Deepin Desktop Environment. It includes multiple Qt5 plugins to make make DDE more Qt5 Apps friendly.
@@ -26,8 +26,8 @@
         </Files>
     </Package>
     <History>
-        <Update release="18">
-            <Date>2018-07-21</Date>
+        <Update release="1">
+            <Date>2018-07-26</Date>
             <Version>0.3.1</Version>
             <Comment>Packaging update</Comment>
             <Name>William Floyd</Name>
