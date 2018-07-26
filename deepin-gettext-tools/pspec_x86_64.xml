@@ -5,7 +5,7 @@
             <Name>William Floyd</Name>
             <Email>william.png2000@gmail.com</Email>
         </Packager>
-        <License>GPL-3.0</License>
+        <License>GPL-3.0-only</License>
         <PartOf>programming.tools</PartOf>
         <Summary xml:lang="en">Deepin Gettext Tools</Summary>
         <Description xml:lang="en">Deepin Gettext Tools
