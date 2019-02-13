@@ -23,6 +23,8 @@ __script="./.utils/${__action}.sh"
 
 if ! [ -e "${__script}" ]; then
     echo "Action '${__action}' does not exist"
+    echo 'Known actions are:'
+    find .utils -mindepth 1 -maxdepth 1 -iname '*.sh' | sed -e 's#.*/##' -e 's/\.sh$//' | grep -vE '^_.*' | sort
     exit 1
 else
 
