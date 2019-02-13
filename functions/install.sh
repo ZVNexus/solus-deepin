@@ -36,12 +36,21 @@ __install() {
             elif __check_rundeps_built "${1}" && __check_built "${1}"; then
                 __list_rundeps_recurse "${1}"
             else
-                echo "Package '${1}' cannot be installed due to missing rundeps." >&2
+                echo "Package '${1}' cannot be installed due to missing rundeps:" >&2
+                __list_rundeps_recurse "${1}" | while read -r __package; do
+                    if ! __check_built "${__package}"; then
+                        echo "${__package}"
+                    fi
+                done >&2
             fi
             shift
         done | __uuniq
     )
 
-    eopkg -y install "${__install_list[@]}"
+    if ! [ -z "${__install_list}" ]; then
+
+        eopkg -y install "${__install_list[@]}"
+
+    fi
 
 }
