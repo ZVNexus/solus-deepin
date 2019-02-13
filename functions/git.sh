@@ -9,7 +9,7 @@ __upgrade() {
     __package="${1}"
     __version="${2}"
     git add "${__package}/"
-    git commit -m "${__package}: Upgrade to ${__version}"
+    git commit -m "${__package}: Upgrade to ${__version}, bump, rebuild."
 }
 
 ################################################################################
