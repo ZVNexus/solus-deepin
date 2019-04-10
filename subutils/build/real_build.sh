@@ -13,6 +13,8 @@ find '/var/lib/solbuild/local/' -iname '*.eopkg' | while read -r __file; do
     rm "${__file}"
 done
 
+solbuild delete-cache &> /dev/null
+
 __recurse_copy_eopkg "${1}"
 
 __build_package "${1}"
