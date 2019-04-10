@@ -71,8 +71,7 @@ __list_packages() {
 .tmp
 .utils
 .vscode
-.rundeps
-.rundeps_hash'
+.rundeps'
 
 }
 

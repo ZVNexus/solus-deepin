@@ -91,51 +91,6 @@ __list_rundeps_raw() {
 
 ################################################################################
 #
-# [...] | __store_eopkg_hash <file>
-#
-# Stores the piped content to a file based on the hash of a filename given.
-# Stores rundeps specifically.
-#
-################################################################################
-
-__store_eopkg_hash() {
-    mkdir -p './.rundeps_hash/'
-    __hash="$(sha1sum < "${1}" | sed 's/ .*//')"
-    __catecho > "./.rundeps_hash/${__hash}"
-}
-
-################################################################################
-#
-# __check_eopkg_hash <file>
-#
-# Checks for a stored hash for a given eopkg.
-#
-################################################################################
-
-__check_eopkg_hash() {
-    __hash="$(sha1sum < "${1}" | sed 's/ .*//')"
-    if [ -e "./.rundeps_hash/${__hash}" ]; then
-        return 0
-    fi
-    return 1
-}
-
-################################################################################
-#
-# __get_eopkg_hash <file>
-#
-# Retrieves the rundeps for the hash for a given eopkg.
-#
-################################################################################
-
-__get_eopkg_hash() {
-    __hash="$(sha1sum < "${1}" | sed 's/ .*//')"
-    cat "./.rundeps_hash/${__hash}"
-}
-
-
-################################################################################
-#
 # __list_rundeps_eopkg_raw <file.eopkg>
 #
 # Wraps `__xmllint`, then spits out a raw list of rundeps.
@@ -144,25 +99,16 @@ __get_eopkg_hash() {
 
 __list_rundeps_eopkg_raw() {
 
-    if __check_eopkg_hash "${1}"; then
-        __get_eopkg_hash "${1}"
-    else
+    let itemsCount=$(__xmllint --xpath 'count(/PISI/Package/RuntimeDependencies/Dependency)' <(eopkg info --xml "${1}") | cat)
+    declare -a __rundeps=()
 
-        let itemsCount=$(__xmllint --xpath 'count(/PISI/Package/RuntimeDependencies/Dependency)' <(eopkg info --xml "${1}") | cat)
-        declare -a __rundeps=()
+    for ((i = 1; i <= $itemsCount; i++)); do
+        __rundeps[$i]="$(__xmllint --xpath '/PISI/Package/RuntimeDependencies/Dependency['$i']/text()' <(eopkg info --xml "${1}") | cat)"
+    done
 
-        for ((i = 1; i <= $itemsCount; i++)); do
-            __rundeps[$i]="$(__xmllint --xpath '/PISI/Package/RuntimeDependencies/Dependency['$i']/text()' <(eopkg info --xml "${1}") | cat)"
-        done
-
-        for __rundep in ${__rundeps[@]}; do
-            echo "${__rundep}"
-        done | __store_eopkg_hash "${1}"
-
-        __get_eopkg_hash "${1}"
-
-    fi
-    
+    for __rundep in ${__rundeps[@]}; do
+        echo "${__rundep}"
+    done
 
 }
 

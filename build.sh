@@ -12,8 +12,6 @@ source '.utils/functions/abi.sh'
 
 export PS4='Line ${LINENO}: '
 
-solbuild delete-cache &> /dev/null
-
 if [ -d '.tmp/' ]; then
     rm -r '.tmp/'
 fi
@@ -124,7 +122,5 @@ while read -r __input; do
         exit 1
     fi
 done <<< "${__inputs}" > '.tmp/output'
-
-rm -r '.rundeps/'
 
 exit
