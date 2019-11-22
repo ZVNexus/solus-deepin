@@ -1,8 +1,8 @@
 name       : deepin-launcher
-version    : 4.6.9
-release    : 40
+version    : 5.0.0
+release    : 41
 source     :
-    - git|https://github.com/linuxdeepin/dde-launcher.git : 4.6.9
+    - git|https://github.com/linuxdeepin/dde-launcher.git : 5.0.0
 license    : GPL-3.0-or-later
 component  : desktop.deepin.core
 summary    : Launcher for the Deepin Desktop Environment.

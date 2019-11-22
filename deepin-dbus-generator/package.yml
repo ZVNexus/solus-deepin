@@ -1,8 +1,8 @@
 name       : deepin-dbus-generator
-version    : 0.6.6
-release    : 26
+version    : 5.0.0
+release    : 27
 source     :
-    - git|https://github.com/linuxdeepin/go-dbus-generator.git : 0.6.6
+    - git|https://github.com/linuxdeepin/go-dbus-generator.git : 5.0.0
 license    : GPL-3.0-or-later
 component  : desktop.deepin.core
 summary    : Convert dbus interfaces to go-lang or qml wrapper code.
